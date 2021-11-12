@@ -1,0 +1,23 @@
+
+function hist() {
+    history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head
+}
+
+# find shorthand
+function f() {
+    find . -name "$1"
+}
+
+function _grep() {
+    grep -r --color=auto -I -n $@
+}
+
+# alias grep=_grep
+
+function codegz() {
+    zless $@ | code -
+}
+
+# function gzipd() {
+#     gzip -c -d $@ > ${echo unzip2}
+# }

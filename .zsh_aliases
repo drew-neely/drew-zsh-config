@@ -1,0 +1,79 @@
+
+if ls --color > /dev/null 2>&1; then
+    colorflag="--color"
+else
+    colorflag="-G"
+fi
+
+# Filesystem aliases {{{
+alias l="ls -lah ${colorflag}"
+alias la="ls -AF ${colorflag}"
+alias ll="ls -lFh ${colorflag}"
+alias lld="ls -l | grep ^d"
+alias rmf="rm -rf"
+alias ls="ls -G"
+alias ls="ls -G -h"
+alias la="ls -A"
+alias lx="ls -lXB" # Sort by extension
+alias lk="ls -lSr" # Sort by size, biggest last
+alias lt="ls -ltr" # Sort by date, most recent last
+alias lc="ls -ltcr" # Sort by/show change time, most recent last
+alias lu="ls -ltur" # Sort by/show access time, most recent last
+alias ll="ls -alF"
+
+
+alias df='df -h' # disk free, in Gigabytes, not bytes
+alias du='du -h -c' # calculate disk usage for a folder
+alias v='vim'
+alias cl='clear'
+
+# Prompt if overrite
+alias mv="mv -i"
+alias cp="cp -i"
+alias rm="rm -i"
+
+# syntax highlighting for ``cat``
+alias c="pygmentize -O style=solarizeddark -f console256 -g"
+
+# File size
+alias fs="stat -f \"%z bytes\""
+
+# common directories
+alias home="cd ~"
+
+# really dumb/lazy aliases
+alias lls=ls
+alias lss=ls
+alias lsss=ls
+alias sl=ls
+alias cdd=cd
+alias cddd=cd
+alias cdddd=cd
+alias ccd=cd
+alias cd..="cd .."
+alias codee=code
+alias codde=code
+alias coddee=code
+alias coddee=code
+alias coddde=code
+alias cleara=clear
+alias cleaar=clear
+alias cleaer=clear
+alias claer=clear
+alias cleear=clear
+alias cler=clear
+alias cleear=clear
+alias caat=cat
+alias watch='watch '
+alias reload='source ~/.zshrc'
+alias h="history | grep"
+
+git-fast() {
+    git config --add oh-my-zsh.hide-status 1
+    git config --add oh-my-zsh.hide-dirty 1
+}
+alias git_fast=git-fast
+alias gitfast=git-fast
+
+# random
+alias path="tr ':' '\n' <<< "$PATH""

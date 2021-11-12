@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+### ZSH must be installed first - may vary based on OS
+# sudo apt install zsh
+
+chsh -s /bin/zsh ${whoami}
+
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+cp -i .zshrc ~
+cp -i .zsh_aliases ~
+cp -i .zsh_functions ~
+
+# install pyenv
+git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+
+pyenv install 2.7.18
+pyenv install 3.8.12
+pyenv install 3.10.0
+pyenv install pypy3.8-7.3.7
+
+pyenv global 3.10.0
